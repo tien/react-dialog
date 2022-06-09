@@ -7,6 +7,9 @@
     "import": "./build/module/index.js",
     "require": "./build/commonjs/index.js"
   },
+  "files": [
+    "build"
+  ],
   "scripts": {
     "prepare": "tsc -m commonjs --outDir build/commonjs && tsc -m esnext --outDir build/module",
     "lint": "eslint ."
