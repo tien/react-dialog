@@ -54,9 +54,11 @@ export const Dialog = React.forwardRef<HTMLDialogElement, DialogProps>(
         }
       };
 
-      innerRef.current?.addEventListener('click', listener);
+      const dialog = innerRef.current;
 
-      return innerRef.current?.removeEventListener('click', listener);
+      dialog?.addEventListener('click', listener);
+
+      return () => dialog?.removeEventListener('click', listener);
     }, [onClickBackdrop]);
 
     return (
