@@ -11,7 +11,7 @@ export type DialogProps = React.DetailedHTMLProps<
 
 export const Dialog = React.forwardRef<HTMLDialogElement, DialogProps>(
   // eslint-disable-next-line react/prop-types
-  function Dialog({open, isModal, onClickBackdrop, ...props}, ref) {
+  function Dialog({open, isModal = true, onClickBackdrop, ...props}, ref) {
     const innerRef = useRef<HTMLDialogElement>();
     const mergedRef = useMergedRef(ref, innerRef);
 
